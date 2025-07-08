@@ -1,0 +1,264 @@
+/* Section Container */
+.projects-section {
+  background: white;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dark theme: entire background and text */
+.theme-dark .projects-section {
+  background: #111111!important;
+  color: white !important;
+}
+
+/* Title */
+.projects-title {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
+.projects-title span {
+  color: hotpink;
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Central Road */
+.road {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 2.5px;
+  height: 100%;
+  background: none;
+  border-left: 2.5px dashed hotpink;
+  z-index: 1;
+}
+
+/* Timeline Item Structure */
+.timeline-item {
+  width: 50%;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Alternate Left and Right Placement */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+  padding-right: 40px;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+  padding-left: 40px;
+}
+
+/* Card Styling */
+.timeline-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.04);
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 0.92rem;
+  border: 2px dashed #a259ff;
+}
+
+/* Project Description */
+.timeline-content p {
+  color: #222;
+  font-size: 0.98rem;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+}
+
+/* Dark theme - all cards */
+.theme-dark .timeline-content {
+  background: #181818 !important;
+  color: #fff !important;
+}
+
+/* Dark theme - description text */
+.theme-dark .timeline-content p {
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+
+/* Light theme - description text */
+.theme-light .timeline-content p {
+  color: #111 !important;
+  font-weight: 700 !important;
+}
+
+/* Project Image */
+.timeline-content img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+/* Project Title */
+.timeline-content h2 {
+  color: #a259ff;
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Project Link */
+.timeline-content a {
+  color: hotpink;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Dot Connector */
+.timeline-item::before {
+  display: none;
+}
+
+/* Tabs */
+.project-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  padding: 0.7rem 2.2rem;
+  border: none;
+  border-radius: 22px;
+  background: #f2f2f2;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.08rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(162, 89, 255, 0.04);
+}
+
+.tab-btn.active {
+  background: #a259ff;
+  color: #fff;
+}
+
+/* Certification Styling */
+.timeline-content.certification {
+  background: #f6f0ff;
+  border: 2px dashed #a259ff;
+}
+
+/* Certification text (light mode) */
+.timeline-content.certification h2,
+.timeline-content.certification a,
+.timeline-content.certification p {
+  color: #a259ff;
+  font-weight: 700;
+}
+
+/* Dark theme: Certification cards black + white text + hotpink border */
+.theme-dark .timeline-content.certification {
+  background: #000 !important;
+  border-color: hotpink !important;
+  color: white !important;
+}
+
+.theme-dark .timeline-content.certification h2,
+.theme-dark .timeline-content.certification a,
+.theme-dark .timeline-content.certification p {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0;
+    text-align: center;
+    padding: 1rem 1rem;
+  }
+
+  .road {
+    left: 20px;
+    border-left: none;
+    background: none;
+  }
+
+  .timeline-item::before {
+    left: 14px !important;
+    right: auto !important;
+  }
+
+  .timeline-content {
+    max-width: 95%;
+    padding: 1rem;
+  }
+}
+
+/* Floating Bubbles */
+.bubbles {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bubble {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: float 20s infinite ease-in-out;
+  bottom: -20px;
+}
+
+.bubble:nth-child(odd) {
+  width: 25px;
+  height: 25px;
+  background: #ff9ad5;
+}
+
+.bubble:nth-child(even) {
+  width: 15px;
+  height: 15px;
+  background: #ffcce0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+  }
+}

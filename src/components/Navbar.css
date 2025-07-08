@@ -1,0 +1,285 @@
+/* Navbar base style */
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-dark {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Logo styling */
+.navbar-logo {
+  width: 35px;
+  height: 35px;
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Links container */
+.navbar-links {
+  flex: 1;
+  text-align: right;
+}
+
+/* Link style */
+.navbar-links a {
+  color: inherit;
+  background: transparent !important;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  transition: none;
+}
+
+.navbar-links a:hover {
+  background: transparent !important;
+  color: hotpink;
+  border: none;
+  box-shadow: none;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+}
+
+.palette-btn {
+  margin-left: 1rem;
+  background: #eee;
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+}
+
+.navbar-dark .palette-btn {
+  background: #222;
+  color: white;
+}
+
+/* Theme dropdown */
+.theme-dropdown {
+  position: absolute;
+  right: 0;
+  top: 2.2rem;
+  background: #f7f7f7;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 0.2rem 0;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.theme-option {
+  background: none;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  text-align: left;
+  cursor: pointer;
+  color: #222;
+  font-weight: 500;
+  font-size: 0.98rem;
+  border-radius: 4px;
+  transition: background 0.18s, color 0.18s;
+}
+
+.theme-option:hover,
+.theme-option.selected {
+  background: #ededed;
+  color: #222;
+}
+
+/* Page structure */
+html, body, #root {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.app-root,
+.main-content,
+#app,
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+section,
+.skills-section,
+.home-section,
+#aboutme,
+#projects,
+#contact,
+#resume {
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Hamburger menu button */
+.navbar-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  outline: none;
+  color: #a259ff;
+  font-size: 1.7rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  z-index: 1002;
+  position: absolute;
+  top: 1.1rem;
+  right: 2vw;
+}
+
+.navbar-menu-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-dark .navbar-menu-btn {
+  color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 58vw;
+    height: 100vh;
+    background: #fff;
+    color: #111;
+    box-shadow: none !important;
+    border: none !important;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4.5rem 1.2rem 2rem 1.2rem;
+    gap: 1.2rem;
+    transition: right 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+    z-index: 1001;
+    display: flex;
+  }
+
+  .navbar-links.open {
+    right: 0;
+  }
+
+  .navbar-links a {
+    font-size: 1.1rem;
+    padding: 0.7rem 0 0.7rem 0.5rem;
+    width: 100%;
+    display: block;
+    text-align: left;
+    margin-left: 0.5rem;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .theme-toggle {
+    margin-top: 1.2rem;
+    margin-left: 0.5rem;
+  }
+
+  .navbar-menu-btn {
+    display: block;
+    position: fixed;
+    top: 1.1rem;
+    right: 2vw;
+    z-index: 2002;
+  }
+
+  /* Dark theme for responsive menu */
+  .navbar-dark .navbar-links {
+    background: #000;
+    color: #fff;
+  }
+
+  .navbar-dark .navbar-links a {
+    color: #fff;
+    border: none;
+    box-shadow: none;
+  }
+
+  .navbar-dark .navbar-links a:hover {
+    color: hotpink;
+    background: transparent;
+  }
+
+  .navbar-dark .theme-toggle {
+    color: #fff;
+  }
+}
+
+/* Sticky navbar style */
+.sticky-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 2000;
+  backdrop-filter: blur(12px) saturate(180%);
+  background: rgba(255,255,255,0.65);
+  box-shadow: 0 2px 16px 0 rgba(162,89,255,0.08);
+  border-bottom: none !important;
+  box-sizing: border-box;
+  padding-right: 2vw;
+}
+
+.navbar-dark.sticky-navbar {
+  background: rgba(24,24,24,0.82);
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.18);
+  border-bottom: none !important;
+}
+
+/* Global dark theme menu links */
+.navbar-dark .navbar-links a {
+  color: white;
+  border: none;
+  box-shadow: none;
+}

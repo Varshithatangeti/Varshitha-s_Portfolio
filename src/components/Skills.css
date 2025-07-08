@@ -1,0 +1,117 @@
+/* ...move only skills section related styles here... */
+.skills-section {
+  text-align: center;
+  color: white;
+  background-color: #0a0a0a;
+  padding: 20px;
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.skills-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.skills-section h2 .highlight-dev,
+.skills-section h2 .highlight-des {
+  color: #a259ff;
+  font-weight: bold;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  width: 150px;
+  border: 2px solid white;
+  padding: 10px;
+  text-align: center;
+  background-color: black;
+  box-shadow: 0 0 10px pink;
+  transition: box-shadow 0.2s, background 0.2s, border-color 0.2s, transform 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  background: #a259ff;
+  border-color: #a259ff;
+  color: #fff;
+  transform: rotateY(360deg) scale(1.08);
+}
+
+.skill-card:hover .skill-name {
+  color: #fff;
+}
+
+.skill-card:hover .skill-icon svg {
+  color: #fff !important;
+  fill: #fff !important;
+}
+
+.skill-card-dark {
+  background: #111;
+  color: #fff;
+}
+
+.skill-card-dark .skill-name {
+  color: #fff;
+}
+
+.skill-icon {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 900px) {
+  .skills-section {
+    padding: 2rem 1rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem 0.7rem;
+  }
+  .skill-card {
+    height: 90px;
+    width: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-section {
+    padding: 1rem 0.2rem;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem 0.5rem;
+  }
+  .skill-card {
+    height: 70px;
+    width: 70px;
+  }
+}
