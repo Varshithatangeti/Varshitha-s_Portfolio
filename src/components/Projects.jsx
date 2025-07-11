@@ -5,21 +5,21 @@ const projects = [
   {
     title: 'Resume Classification using ANN',
     description:
-      'An intelligent system that uses Artificial Neural Networks (ANN) to analyze resumes and job descriptions, predicting whether a candidate is qualified. Automates shortlisting by matching skills, experience, and job relevance accurately.',
+      'An intelligent system that analyzes resumes and job descriptions using Artificial Neural Networks.',
     image: '/assets/Screenshot (118).png',
     link: 'https://github.com/yourgithub/translate',
   },
   {
     title: 'Blog Platform using MERN Stack',
     description:
-      'A full-stack blog application built with MongoDB, Express.js, React, and Node.js that allows users to create, read, update, and delete posts. Includes user authentication, rich text editing, and responsive design.',
+      'A full-stack blog application with CRUD, authentication, and a clean UI using the MERN stack.',
     image: '/assets/image.png',
     link: 'https://github.com/yourgithub/food-planner',
   },
   {
     title: 'ArogyaSathi',
     description:
-      'A health friend companion which is used for disease prediction by entering the symptoms it will predict the disease what we have and some suggestions.',
+      'A disease prediction tool based on symptoms with suggestions, acting like your health buddy.',
     image: '/assets/Screenshot 2025-07-08 074604.png',
     link: 'https://github.com/yourgithub/portfolio',
   },
@@ -27,29 +27,28 @@ const projects = [
 
 const certifications = [
   {
-    title: 'React Developer Certification',
+    title: 'Python Certification',
     description: 'Certified React Developer by XYZ Institute.',
-    image: '/assets/cert1.png',
-    link: 'https://example.com/cert1',
+    image: '/assets/Screenshot 2025-07-11 111555.png',
+    link: '/certificates/python_basic certificate.pdf',
   },
   {
-    title: 'Machine Learning Specialization',
+    title: 'Sql Basic Certification',
     description: 'Completed Machine Learning Specialization by Coursera.',
-    image: '/assets/cert2.png',
-    link: 'https://example.com/cert2',
+    image: '/assets/Screenshot 2025-07-11 111837.png',
+    link: '/certificates/sql_basic certificate.pdf',
   },
   {
-    title: 'UI/UX Design Certificate',
-    description: 'UI/UX Design Certificate from ABC Academy.',
-    image: '/assets/cert3.png',
-    link: 'https://example.com/cert3',
+    title: "Angular certification by Infosys springboard",
+    description: 'Completed Machine Learning Specialization by Coursera.',
+    image: '/assets/Screenshot 2025-07-11 111837.png',
+    link: '/certificates/sql_basic certificate.pdf',
   },
 ];
 
 export default function Projects() {
   const [tab, setTab] = React.useState('projects');
 
-  // Scroll to section if hash is #certifications on load
   React.useEffect(() => {
     const hash = window.location.hash;
     if (hash === '#certifications') {
@@ -61,7 +60,6 @@ export default function Projects() {
     }
   }, []);
 
-  // Scroll when tab changes
   React.useEffect(() => {
     const targetId = tab === 'certifications' ? 'certifications' : 'projects-section';
     setTimeout(() => {
@@ -73,7 +71,6 @@ export default function Projects() {
 
   return (
     <section id="projects-section" className="projects-section">
-      {/* Anchor div for smooth scroll to Certifications */}
       {tab === 'certifications' && <div id="certifications" style={{ position: 'absolute', top: '-80px' }}></div>}
 
       <h1 className="projects-title">
@@ -95,18 +92,13 @@ export default function Projects() {
         </button>
       </div>
 
-      <div className="timeline">
-        <div className="road"></div>
+      <div className="grid-container">
         {(tab === 'projects' ? projects : certifications).map((item, idx) => (
-          <div key={idx} className={`timeline-item ${idx % 2 === 0 ? 'left' : 'right'}`}>
-            <div className={`timeline-content${tab === 'certifications' ? ' certification' : ''}`}>
-              <img src={item.image} alt={item.title} />
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
-              <a href={item.link} target="_blank" rel="noopener noreferrer">
-                View {tab === 'projects' ? 'Project' : 'Certificate'}
-              </a>
-            </div>
+          <div key={idx} className={`timeline-content ${tab === 'certifications' ? 'certification' : ''}`}>
+            <img src={item.image} alt={item.title} />
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            <a href={item.link} target="_blank" rel="noopener noreferrer">Check Out</a>
           </div>
         ))}
       </div>
