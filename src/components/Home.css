@@ -793,7 +793,7 @@ Skills Section
 }
 
 /* Snow Effect */
-.snow-container {
+/* .snow-container {
   pointer-events: none;
   position: fixed;
   top: 0; left: 0;
@@ -843,7 +843,7 @@ Skills Section
     transform: translateY(100vh) scale(1.1) rotate(360deg);
     opacity: 0.1;
   }
-}
+} */
 
 /* Remove rain effect if present */
 .rain-container,

@@ -1,7 +1,7 @@
 /* Section Container */
 .projects-section {
   background: white;
-  color: white;
+  color: #222; /* Changed from white to black-ish for visibility */
   position: relative;
   overflow: hidden;
   padding: 4rem 2rem;

@@ -47,18 +47,19 @@ export default function AboutMe() {
               letterSpacing: "1px",
               width: "100%",
               color: "#111",
-              zIndex: 2
+              zIndex: 2,
+              fontFamily: 'poppins'
             }}
           >
             About Me
           </h1>
-          <p style={{ fontSize: "1.1rem", color: "#444", marginBottom: "1.5rem", lineHeight: 1.7, textAlign: "center" }}>
+          <p style={{ fontSize: "1.1rem",alignContent:'center',fontFamily:'poppins',color: "#444", marginBottom: "1.5rem", lineHeight: 1.7, textAlign: "center" }}>
             I’m Varshitha Tangeti, an enthusiastic and driven computer science student specializing in Artificial Intelligence and machine learning.
             With a strong foundation in frontend development and a growing passion for intelligent systems, I love building real-world projects that blend creativity and functionality.
           </p>
-          <p style={{ fontSize: "1.1rem", color: "#444", marginBottom: "1.5rem", lineHeight: 1.7, textAlign: "center" }}>
+          <p style={{ fontSize: "1.1rem",alignContent:'center', fontfamily:'poppins',color: "#444", marginBottom: "1.5rem", lineHeight: 1.7, textAlign: "center" }}>
             Over the past few months, I’ve worked on several impactful projects— from dynamic websites to machine learning models—combining my technical knowledge in
-            <span style={{ fontWeight: 700 }}> HTML, CSS, JavaScript, SQL, Node.js, Python, Postman, GitHub, Figma, MongoDB, and UI/UX designing </span>
+            <span style={{ fontWeight: 700 ,fontFamily:'poppins'}}> HTML, CSS, JavaScript, SQL, Node.js, Python, Postman, GitHub, Figma, MongoDB, and UI/UX designing </span>
             with my academic understanding of AI and machine learning.
           </p>
           {/* Download Resume Button */}
@@ -90,18 +91,19 @@ export default function AboutMe() {
           flex: 1,
           display: "flex",
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
+          maxWidth: "400px",
+          padding: "1.5rem",
+          position: "relative",
         }}>
           <img
-            src={aboutImg}
+            src="/assets/M.jpg"
             alt="About Varshitha"
             style={{
               maxWidth: "370px",
               width: "90%",
-              border: "3px solid #111",
-              borderRadius: "18px",
-              background: "transparent",
-              boxShadow: "0 4px 24px 0 rgba(31,38,135,0.10)",
+              
+      
               padding: "1.2rem"
             }}
           />

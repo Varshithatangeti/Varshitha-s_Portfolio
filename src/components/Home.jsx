@@ -58,7 +58,7 @@ export default function Home() {
         <div className="home-image">
           <img src={heroImg} alt="Varshitha working" />
         </div>
-        <div className="home-text" style={{ fontFamily: "'Dancing Script', cursive, Arial, sans-serif" }}>
+        <div className="home-text" style={{ Content:'center',fontFamily: "roman, sans-serif" }}>
           <h1>
             Hello I’am <span className="highlight">Varshitha.</span>
             <br />

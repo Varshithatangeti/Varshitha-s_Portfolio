@@ -15,7 +15,7 @@ function Bubbles() {
 }
 
 const skills = [
-  { name: 'GitHub', icon: <FaGithub size={40} color="#111" /> },
+  { name: 'GitHub', icon: <FaGithub size={40} color="" /> },
   { name: 'Figma', icon: <FaFigma size={40} color="#a259ff" /> },
   { name: 'MongoDB', icon: <SiMongodb size={40} color="#47A248" /> },
   { name: 'JavaScript', icon: <SiJavascript size={40} color="#f7df1e" /> },
